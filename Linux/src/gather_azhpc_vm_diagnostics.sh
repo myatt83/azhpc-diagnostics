@@ -326,10 +326,10 @@ fetch_syslog() {
         print_log -e "\tDumping system logs from journald to {output}/VM/journald.log"
         journalctl | filter_syslog > "$DIAG_DIR/VM/journald.log"
     elif [ -f /var/log/syslog ]; then
-        print_log -e "\tCopying sytem logs from /var/log/syslog to {output}/VM/syslog"
+        print_log -e "\tCopying system logs from /var/log/syslog to {output}/VM/syslog"
         filter_syslog </var/log/syslog >"$DIAG_DIR/VM/syslog"
     elif [ -f /var/log/messages ]; then
-        print_log -e "\tCopying sytem logs from /var/log/messages to {output}/VM/messages"
+        print_log -e "\tCopying system logs from /var/log/messages to {output}/VM/messages"
         filter_syslog </var/log/messages >"$DIAG_DIR/VM/messages"
     else
         print_log -e "\tNo system logs found. Checked journald and /var/log/syslog|messages"
